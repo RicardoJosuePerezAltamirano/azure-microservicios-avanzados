@@ -11,6 +11,7 @@ namespace WisdomPetMedicine.Rescue.Domain.Entities
         public AdopterName Name { get; private set; }
         public AdopterQuestionnaire Questionnaire { get; private set; }
         public AdopterAddress Address { get; private set; }
+        public AdopterPhoneNumber PhoneNumber { get; private set; }
 
         public Adopter(Guid id)
         {
@@ -55,6 +56,14 @@ namespace WisdomPetMedicine.Rescue.Domain.Entities
             {
                 throw new InvalidAdopterStateException("Adopter address is missing");
             }
+            if (PhoneNumber == null)
+            {
+                throw new InvalidAdopterStateException("Adopter phone is missing");
+            }
+        }
+        public void SetPhoneNumber( AdopterPhoneNumber adopterPhoneNumber)
+        {
+            PhoneNumber = adopterPhoneNumber;
         }
     }
 }
