@@ -31,7 +31,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WisdomPetMedicine.Pet.Api",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WisdomPetMdicine.RescueQuery.Api", "WisdomPetMdicine.RescueQuery.Api\WisdomPetMdicine.RescueQuery.Api.csproj", "{D8C99FD6-68D0-46DD-81C7-0F12578A6FAB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WisdomPetMedicine.Hospital.Infrastructure", "WisdomPetMedicine.Hospital.Infrastructure\WisdomPetMedicine.Hospital.Infrastructure.csproj", "{363A13FA-2B77-415F-88E3-4A8763EFF41E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WisdomPetMedicine.Hospital.Infrastructure", "WisdomPetMedicine.Hospital.Infrastructure\WisdomPetMedicine.Hospital.Infrastructure.csproj", "{363A13FA-2B77-415F-88E3-4A8763EFF41E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Gateway", "Gateway", "{66BB2E47-B225-42C7-9E5B-D6B1DC91A92B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WisdomPetMedicine.Api", "WisdomPetMedicine.Api\WisdomPetMedicine.Api.csproj", "{999D1E6C-B6DD-416F-BBC2-6DCC3AE46BC5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -187,6 +191,18 @@ Global
 		{363A13FA-2B77-415F-88E3-4A8763EFF41E}.Release|x64.Build.0 = Release|Any CPU
 		{363A13FA-2B77-415F-88E3-4A8763EFF41E}.Release|x86.ActiveCfg = Release|Any CPU
 		{363A13FA-2B77-415F-88E3-4A8763EFF41E}.Release|x86.Build.0 = Release|Any CPU
+		{999D1E6C-B6DD-416F-BBC2-6DCC3AE46BC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{999D1E6C-B6DD-416F-BBC2-6DCC3AE46BC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{999D1E6C-B6DD-416F-BBC2-6DCC3AE46BC5}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{999D1E6C-B6DD-416F-BBC2-6DCC3AE46BC5}.Debug|x64.Build.0 = Debug|Any CPU
+		{999D1E6C-B6DD-416F-BBC2-6DCC3AE46BC5}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{999D1E6C-B6DD-416F-BBC2-6DCC3AE46BC5}.Debug|x86.Build.0 = Debug|Any CPU
+		{999D1E6C-B6DD-416F-BBC2-6DCC3AE46BC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{999D1E6C-B6DD-416F-BBC2-6DCC3AE46BC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{999D1E6C-B6DD-416F-BBC2-6DCC3AE46BC5}.Release|x64.ActiveCfg = Release|Any CPU
+		{999D1E6C-B6DD-416F-BBC2-6DCC3AE46BC5}.Release|x64.Build.0 = Release|Any CPU
+		{999D1E6C-B6DD-416F-BBC2-6DCC3AE46BC5}.Release|x86.ActiveCfg = Release|Any CPU
+		{999D1E6C-B6DD-416F-BBC2-6DCC3AE46BC5}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -203,6 +219,7 @@ Global
 		{D189A9C3-FF89-4DB5-91EB-F60A55FB6144} = {5C34E5FA-F38D-48ED-8C0A-18CB38348A65}
 		{D8C99FD6-68D0-46DD-81C7-0F12578A6FAB} = {29F05733-5BEC-41F1-B6DB-63A81C8C1608}
 		{363A13FA-2B77-415F-88E3-4A8763EFF41E} = {ED32E001-37EB-482C-98B7-716EF5B463E7}
+		{999D1E6C-B6DD-416F-BBC2-6DCC3AE46BC5} = {66BB2E47-B225-42C7-9E5B-D6B1DC91A92B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7097D41A-55D6-4B84-9F16-4568C9D6C544}

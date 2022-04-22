@@ -30,6 +30,7 @@ namespace WisdomPetMedicine.Hospital.Infrastructure
         }
         public async Task<Patient> LoadAsync(PatientId patientId)
         {
+            // carga los eventos pasados
             if(patientId == null)
             {
                 throw new ArgumentNullException(nameof(patientId));
@@ -65,6 +66,7 @@ namespace WisdomPetMedicine.Hospital.Infrastructure
 
         public async Task SaveAsync(Patient patient)
         {
+            //guarda el nueco evento
             if(patient == null)
             {
                 throw new ArgumentNullException(nameof(patient));
