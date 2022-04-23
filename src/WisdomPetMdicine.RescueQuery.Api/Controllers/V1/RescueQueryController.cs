@@ -2,8 +2,9 @@ using Dapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
 
-namespace WisdomPetMdicine.RescueQuery.Api.Controllers
+namespace WisdomPetMdicine.RescueQuery.Api.Controllers.V1
 {
+    [ApiVersion("1.0")]
     [ApiController]
     [Route("[controller]")]
     public class RescueQueryController : ControllerBase
@@ -17,6 +18,7 @@ namespace WisdomPetMdicine.RescueQuery.Api.Controllers
         }
 
         [HttpGet]
+        //https://localhost:44386/rescuequery?api-version=2.0
         public async Task<IActionResult> Get()
         {
             string sql = @"select * from adopters";
