@@ -1,9 +1,12 @@
+using Azure.Monitor.OpenTelemetry.Exporter;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using OpenTelemetry.Resources;
+using OpenTelemetry.Trace;
 using WisdomPetMedicine.Pet.Api.ApplicationServices;
 using WisdomPetMedicine.Pet.Api.Extensions;
 using WisdomPetMedicine.Pet.Api.Infrastructure;
@@ -15,6 +18,7 @@ namespace WisdomPetMedicine.Pet.Api
     public class Startup
     {
         public IConfiguration Configuration { get; }
+        private const string ServiceName = "WisdomPetMedicine.Pet.Api";
 
         public Startup(IConfiguration configuration)
         {
@@ -23,6 +27,23 @@ namespace WisdomPetMedicine.Pet.Api
 
         public void ConfigureServices(IServiceCollection services)
         {
+            //instalar jaeger en contenedores, esta bueno para los log de trazabilidad 
+            services.AddOpenTelemetryTracing(config =>
+            {
+                config.SetResourceBuilder(ResourceBuilder.CreateDefault().AddService(ServiceName));
+                config.AddAzureMonitorTraceExporter(c =>
+                {
+                    c.ConnectionString = Configuration["AppInsights:ConnectionString"];
+                })
+                .AddJaegerExporter(o =>
+                {
+                    o.AgentHost = Configuration.GetValue<string>("Jaeger:Host");
+                    o.AgentPort = Configuration.GetValue<int>("Jaeger:Port");
+                }).AddSource("pet-api")
+                .AddAspNetCoreInstrumentation()//instrumentacion - indican que se quiere rastrear 
+                .AddHttpClientInstrumentation()
+                .AddSqlClientInstrumentation(s => s.SetDbStatementForText = true);
+            });
             services.AddHealthChecks()
                 .AddDbContextCheck<PetDbContext>();
             services.AddPetDb(Configuration);
